@@ -1,6 +1,4 @@
 {
-    const formElement = document.querySelector(".js-form");
-
     const calculate = (amount, currency, signElement) => {
 
         const currencyEUR = 4.63;
@@ -19,21 +17,27 @@
                 return amount / currencyGBP;
         }
     }
-
     const calculateResult = (event) => {
 
         event.preventDefault();
 
         const amountElement = document.querySelector(".js-amount");
         const currencyElement = document.querySelector(".js-currency");
-        const resultElement = document.querySelector(".js-result");
         const signElement = document.querySelector(".js-sign");
 
         const result = calculate(+amountElement.value, currencyElement.value, signElement);
 
+        const resultElement = document.querySelector(".js-result");
+
         resultElement.innerText = result.toFixed(2);
 
     }
+    const init = () => {
 
-    formElement.addEventListener("submit", calculateResult)
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", calculateResult)
+
+    }
+    init();
 }
