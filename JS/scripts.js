@@ -4,7 +4,7 @@ let currencyElement = document.querySelector(".js-currency");
 let resultElement = document.querySelector(".js-result");
 let signElement = document.querySelector(".js-sign");
 
-let calculateResult = (event) => {
+const calculateResult = (event) => {
     event.preventDefault();
 
     let amount = amountElement.value;
