@@ -1,16 +1,7 @@
 {
     const formElement = document.querySelector(".js-form");
-    const amountElement = document.querySelector(".js-amount");
-    const currencyElement = document.querySelector(".js-currency");
-    const resultElement = document.querySelector(".js-result");
-    const signElement = document.querySelector(".js-sign");
 
-    const calculateResult = (event) => {
-        event.preventDefault();
-
-        const amount = amountElement.value;
-        const currency = currencyElement.value;
-        let result = resultElement.value;
+    const calculate = (amount, currency, signElement) => {
 
         const currencyEUR = 4.63;
         const currencyUSD = 4.16;
@@ -18,20 +9,30 @@
 
         switch (currency) {
             case "EUR":
-                result = amount / currencyEUR;
                 signElement.innerText = " €";
-                break;
+                return amount / currencyEUR;
             case "USD":
-                result = amount / currencyUSD;
                 signElement.innerText = " $";
-                break;
+                return amount / currencyUSD;
             case "GBP":
-                result = amount / currencyGBP;
                 signElement.innerText = " £";
-                break;
+                return amount / currencyGBP;
         }
+    }
+
+    const calculateResult = (event) => {
+
+        event.preventDefault();
+
+        const amountElement = document.querySelector(".js-amount");
+        const currencyElement = document.querySelector(".js-currency");
+        const resultElement = document.querySelector(".js-result");
+        const signElement = document.querySelector(".js-sign");
+
+        const result = calculate(+amountElement.value, currencyElement.value, signElement);
 
         resultElement.innerText = result.toFixed(2);
+
     }
 
     formElement.addEventListener("submit", calculateResult)
