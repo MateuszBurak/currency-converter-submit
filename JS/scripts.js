@@ -1,36 +1,38 @@
-let formElement = document.querySelector(".js-form");
-let amountElement = document.querySelector(".js-amount");
-let currencyElement = document.querySelector(".js-currency");
-let resultElement = document.querySelector(".js-result");
-let signElement = document.querySelector(".js-sign");
+{
+    const formElement = document.querySelector(".js-form");
+    const amountElement = document.querySelector(".js-amount");
+    const currencyElement = document.querySelector(".js-currency");
+    const resultElement = document.querySelector(".js-result");
+    const signElement = document.querySelector(".js-sign");
 
-const calculateResult = (event) => {
-    event.preventDefault();
+    const calculateResult = (event) => {
+        event.preventDefault();
 
-    let amount = amountElement.value;
-    let currency = currencyElement.value;
-    let result = resultElement.value;
+        const amount = amountElement.value;
+        const currency = currencyElement.value;
+        let result = resultElement.value;
 
-    let currencyEUR = 4.63;
-    let currencyUSD = 4.16;
-    let currencyGBP = 5.23;
+        const currencyEUR = 4.63;
+        const currencyUSD = 4.16;
+        const currencyGBP = 5.23;
 
-    switch (currency) {
-        case "EUR":
-            result = amount / currencyEUR;
-            signElement.innerText = " €";
-            break;
-        case "USD":
-            result = amount / currencyUSD;
-            signElement.innerText = " $";
-            break;
-        case "GBP":
-            result = amount / currencyGBP;
-            signElement.innerText = " £";
-            break;
+        switch (currency) {
+            case "EUR":
+                result = amount / currencyEUR;
+                signElement.innerText = " €";
+                break;
+            case "USD":
+                result = amount / currencyUSD;
+                signElement.innerText = " $";
+                break;
+            case "GBP":
+                result = amount / currencyGBP;
+                signElement.innerText = " £";
+                break;
+        }
+
+        resultElement.innerText = result.toFixed(2);
     }
 
-    resultElement.innerText = result.toFixed(2);
+    formElement.addEventListener("submit", calculateResult)
 }
-
-formElement.addEventListener("submit", calculateResult)
