@@ -10,7 +10,8 @@ html {
     max-width: 1000px;
     text-align: center;
     color: rgb(15, 15, 15);
-    background-color: #e5dae7;
+    background-image: url("https://media.istockphoto.com/id/927887860/pl/zdj%C4%99cie/koncepcja-finansowania-i-inwestycji-biznesowych-wykres-i-rz%C4%99dy-ze-statystycznym-wzrostem.jpg?s=1024x1024&w=is&k=20&c=D8_J_FUREmbBf_iXaljLJteL8g8yWITYqtl4xTEXi5M=");
+    background-size: cover;
     margin: 0 auto;
     font-family: 'Roboto Condensed', sans-serif;
 }
