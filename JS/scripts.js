@@ -4,7 +4,7 @@ let currencyElement = document.querySelector(".js-currency");
 let resultElement = document.querySelector(".js-result");
 let signElement = document.querySelector(".js-sign");
 
-formElement.addEventListener("submit", (event) => {
+let calculateResult = (event) => {
     event.preventDefault();
 
     let amount = amountElement.value;
@@ -31,4 +31,6 @@ formElement.addEventListener("submit", (event) => {
     }
 
     resultElement.innerText = result.toFixed(2);
-})
+}
+
+formElement.addEventListener("submit", calculateResult)
