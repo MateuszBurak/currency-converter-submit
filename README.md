@@ -22,6 +22,8 @@ To use it, simply input the amount and choose the currency you want the outcome 
 
 Since this simple converter does not use api, as it's mostly meant to practice the *input* element, it uses convertion data from early 2023.
 
+It uses ES6+ features.
+
 It's code consists of 3 functions:
 
 ```javascript
