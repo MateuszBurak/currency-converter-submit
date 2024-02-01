@@ -12,35 +12,66 @@ This project is a part of my learning process of becomming a Frontend developer.
 [Link to the converter](https://mateuszburak.github.io/currency-converter-submit/) |
 [Link to the converter's repository](https://github.com/MateuszBurak/currency-converter-submit)
 
-This simple converter does not use api, as it's mostly meant to practice the *submit* element
+This converter converts currency values from PLN to EUR, USD and GBP. It follows BEM convention.
+
+## How to use
+
+To use it, simply input the amount and choose the currency you want the outcome to be in.
+
+## Code
+
+Since this simple converter does not use api, as it's mostly meant to practice the *input* element, it uses convertion data from early 2023.
+
+It's code consists of 3 functions:
 
 ```javascript
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+const calculate = (amount, currency, signElement) => {
 
-    let amount = amountElement.value;
-    let currency = currencyElement.value;
-    let result = resultElement.value;
+        const currencyEUR = 4.63;
+        const currencyUSD = 4.16;
+        const currencyGBP = 5.23;
 
-    let currencyEUR = 4.63;
-    let currencyUSD = 4.16;
-    let currencyGBP = 5.23;
-
-    switch (currency) {
-        case "EUR":
-            result = amount / currencyEUR;
-            signElement.innerText = " €";
-            break;
-        case "USD":
-            result = amount / currencyUSD;
-            signElement.innerText = " $";
-            break;
-        case "GBP":
-            result = amount / currencyGBP;
-            signElement.innerText = " £";
-            break;
+        switch (currency) {
+            case "EUR":
+                signElement.innerText = " €";
+                return amount / currencyEUR;
+            case "USD":
+                signElement.innerText = " $";
+                return amount / currencyUSD;
+            case "GBP":
+                signElement.innerText = " £";
+                return amount / currencyGBP;
+        }
     }
+```
 
-    resultElement.innerText = result.toFixed(2);
-})
+```javascript
+const calculateResult = (event) => {
+
+        event.preventDefault();
+
+        const amountElement = document.querySelector(".js-amount");
+        const currencyElement = document.querySelector(".js-currency");
+        const signElement = document.querySelector(".js-sign");
+
+        const result = calculate(+amountElement.value, currencyElement.value, signElement);
+
+        const resultElement = document.querySelector(".js-result");
+
+        resultElement.innerText = result.toFixed(2);
+
+    }
+```
+
+```javascript
+{
+        const init = () => {
+
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", calculateResult)
+
+    }
+    init();
+}
 ```
