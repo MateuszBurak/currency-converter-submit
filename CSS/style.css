@@ -10,15 +10,13 @@ html {
     max-width: 1000px;
     text-align: center;
     color: rgb(15, 15, 15);
-    background-image: url("https://media.istockphoto.com/id/927887860/pl/zdj%C4%99cie/koncepcja-finansowania-i-inwestycji-biznesowych-wykres-i-rz%C4%99dy-ze-statystycznym-wzrostem.jpg?s=1024x1024&w=is&k=20&c=D8_J_FUREmbBf_iXaljLJteL8g8yWITYqtl4xTEXi5M=");
+    background-image: url("https://media.istockphoto.com/id/1299881309/pl/zdj%C4%99cie/zbli%C5%BCenie-t%C5%82a-banknotu-pieni%C4%99dzmi-sto-dolar%C3%B3w.jpg?s=1024x1024&w=is&k=20&c=QXQ1Yhr6q1nqMrNiugur1tP7ic9d2RLua7mYt-A-DG8=");
     background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     margin: 0 auto;
     font-family: 'Roboto Condensed', sans-serif;
-}
-
-.container {
-    display: inline-block;
-    max-width: 700px;
-    margin-top: 100px;
-    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
 }

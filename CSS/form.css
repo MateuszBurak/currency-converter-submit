@@ -1,12 +1,9 @@
-.form {
-    margin: 50% 0px 0px 0px;
-}
-
 .form__fieldset {
     max-width: 600px;
     padding: 10px;
     width: 100%;
     background-image: linear-gradient(to bottom right, #8f6197, #b493ba);
+    box-shadow: #3a3838 0px 0px 20px 5px;
     border-radius: 8px;
     border: 4px solid rgb(58, 56, 56);
 }
